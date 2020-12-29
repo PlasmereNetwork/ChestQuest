@@ -1,6 +1,6 @@
 package net.plasmere.chestquest.objects;
 
-import net.plasmere.chestquest.utils.PluginUtils;
+import net.plasmere.chestquest.enums.PlayerState;
 import org.bukkit.*;
 import org.bukkit.advancement.Advancement;
 import org.bukkit.advancement.AdvancementProgress;
@@ -31,22 +31,26 @@ import org.bukkit.util.BoundingBox;
 import org.bukkit.util.RayTraceResult;
 import org.bukkit.util.Vector;
 
-import java.io.File;
 import java.net.InetSocketAddress;
 import java.util.*;
 
 public class ChestPlayer implements Player {
 
-    private final String fileFolder = PluginUtils.getPlugin().getDataFolder() + File.separator + "";
     private final Player player;
+    private PlayerState state;
     public int gold;
-    public File file;
 
     public ChestPlayer(Player player) {
         this.player = player;
     }
 
+    public PlayerState getState() {
+        return state;
+    }
 
+    public void setState(PlayerState state) {
+        this.state = state;
+    }
 
     @Override
     public String getDisplayName() {
@@ -558,7 +562,7 @@ public class ChestPlayer implements Player {
 
     @Override
     public Player getPlayer() {
-        return player.getPlayer();
+        return null;
     }
 
     @Override

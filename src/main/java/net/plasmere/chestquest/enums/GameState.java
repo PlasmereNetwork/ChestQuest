@@ -1,4 +1,4 @@
-package net.plasmere.chestquest.objects;
+package net.plasmere.chestquest.enums;
 
 public enum GameState {
     STARTING,
