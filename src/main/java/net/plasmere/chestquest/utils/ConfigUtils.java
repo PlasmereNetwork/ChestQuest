@@ -11,4 +11,9 @@ public class ConfigUtils {
     }
 
     public static String version = config.getString("version");
+    public static String sqlHost = config.getString("mysql.host");
+    public static int sqlPort = config.getInt("mysql.port");
+    public static String sqlDatabase = config.getString("mysql.database");
+    public static String sqlUsername = config.getString("mysql.username");
+    public static String sqlPassword = config.getString("mysql.password");
 }
