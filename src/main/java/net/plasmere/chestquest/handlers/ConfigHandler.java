@@ -145,6 +145,7 @@ public class ConfigHandler {
             }
 
             this.oConf = this.conf;
+
             try {
                 this.configuration.load(cfile);
             } catch (Exception e){
