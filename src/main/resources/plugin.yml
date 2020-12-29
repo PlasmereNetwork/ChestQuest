@@ -1,0 +1,6 @@
+name: ChestQuest
+version: 0.0.1
+main: net.plasmere.chestquest.ChestQuest
+authors:
+  - Nitrate
+  - tomstar
