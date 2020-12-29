@@ -6,7 +6,7 @@ public class ChestQuest extends JavaPlugin {
 
     @Override
     public void onEnable() {
-
+        // test
     }
 
     @Override
