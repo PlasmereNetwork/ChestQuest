@@ -10,6 +10,7 @@ public class ChestQuest extends JavaPlugin {
 
     public Config getConf() {
         return config;
+        // test
     }
 
     public void setup(){
