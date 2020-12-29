@@ -1,5 +1,7 @@
 package net.plasmere.chestquest;
 
+import net.plasmere.chestquest.utils.ConfigUtils;
+import net.plasmere.chestquest.utils.SQLUtils;
 import org.bukkit.plugin.java.JavaPlugin;
 import net.plasmere.chestquest.handlers.ConfigHandler;
 
@@ -7,26 +9,13 @@ import java.sql.*;
 
 public class ChestQuest extends JavaPlugin {
 
+    private static ChestQuest instance;
+
     private ConfigHandler configHandler;
     private Statement statement;
 
     public ConfigHandler getConf() {
         return configHandler;
-    }
-
-    public void setup(){
-        this.configHandler = new ConfigHandler();
-
-        try {
-            sqlInit("localhost", 3306, "", "", "");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void sqlInit(String host, int port, String database, String username, String password) throws SQLException {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + database, username, password);
-        statement = connection.createStatement();
     }
 
     public void executeSQL(String query) {
@@ -50,12 +39,19 @@ public class ChestQuest extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        setup();
+        instance = this;
+
+        this.configHandler = new ConfigHandler();
+        SQLUtils.initialize(ConfigUtils.sqlHost, ConfigUtils.sqlPort, ConfigUtils.sqlDatabase, ConfigUtils.sqlUsername, ConfigUtils.sqlPassword);
     }
 
     @Override
     public void onDisable() {
 
+    }
+
+    public static ChestQuest getInstance() {
+        return instance;
     }
 
 }
