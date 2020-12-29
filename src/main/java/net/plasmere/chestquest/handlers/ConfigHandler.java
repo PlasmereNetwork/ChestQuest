@@ -1,4 +1,4 @@
-package net.plasmere.chestquest.objects.config;
+package net.plasmere.chestquest.handlers;
 
 import net.plasmere.chestquest.ChestQuest;
 import net.plasmere.chestquest.utils.ConfigUtils;
@@ -14,7 +14,7 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.util.Objects;
 
-public class Config {
+public class ConfigHandler {
     private FileConfiguration configuration = new YamlConfiguration();
     private FileConfiguration messaguration = new YamlConfiguration();
 
@@ -29,7 +29,7 @@ public class Config {
     private final File cfile = new File(inst.getDataFolder(), "config.yml");
     private final File mfile = new File(inst.getDataFolder(), "messages.yml");
 
-    public Config(){
+    public ConfigHandler(){
         if (! this.inst.getDataFolder().exists()) {
             if (this.inst.getDataFolder().mkdir()) {
                 this.inst.getLogger().info("Made folder: " + this.inst.getDataFolder().getName());
