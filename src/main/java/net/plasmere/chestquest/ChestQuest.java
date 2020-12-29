@@ -1,7 +1,6 @@
 package net.plasmere.chestquest;
 
 import net.plasmere.chestquest.objects.config.Config;
-import net.plasmere.chestquest.utils.ConfigUtils;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class ChestQuest extends JavaPlugin {
