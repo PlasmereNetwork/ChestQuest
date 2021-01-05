@@ -1,2 +1,16 @@
 # DO NOT CHANGE THIS
-version: 0.0.1
+version: "0.0.1"
+
+# Before Game Starts
+# Countdown for the game.
+# Fillers:
+# %seconds% = Seconds until game starts.
+# %totalsec% = Total seconds until game starts.
+countdown: "&cGame starting in &6%seconds% &cseconds!"
+# When the game starts.
+# Fillers:
+# %totalsec% = Total seconds until game starts.
+start: "&cGAME STARTED!"
+# When someone joins.
+join: "&d%player% &bjoined &ethe game."
+leave: "&d%player% &cleft &ethe game."

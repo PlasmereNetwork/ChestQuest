@@ -6,18 +6,21 @@ import net.plasmere.chestquest.utils.PluginUtils;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
-public class PlayerJoinListener implements Listener {
+public class PlayerLeaveListener implements Listener {
 
-    public PlayerJoinListener(ChestQuest plugin) {
+    public PlayerLeaveListener(ChestQuest plugin) {
         PluginUtils.registerListener(this);
     }
 
     @EventHandler
-    public void onJoin(PlayerJoinEvent event) {
+    public void onLeave(PlayerQuitEvent event) {
         GameHandler game = PluginUtils.getPlugin().getGameHandler();
 
-        game.addPlayer(event.getPlayer());
+        if (! game.isStarted()) {
+            PluginUtils.getPlugin().getGameHandler().removePlayer(event.getPlayer());
+        }
     }
 
 }

@@ -18,6 +18,8 @@ public class GameHandler {
     private Map<ChestPlayer, PlayerState> players;
     private GameState state;
 
+    private BukkitTask countdownTask;
+
     public GameHandler() {
         players = new HashMap<>();
     }
@@ -95,6 +97,10 @@ public class GameHandler {
 
     public GameState getState() {
         return state;
+    }
+
+    public boolean isStarted(){
+        return state.equals(GameState.RUNNING);
     }
 
 }
