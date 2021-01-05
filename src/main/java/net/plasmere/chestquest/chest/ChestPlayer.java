@@ -1,4 +1,4 @@
-package net.plasmere.chestquest.objects;
+package net.plasmere.chestquest.chest;
 
 import net.plasmere.chestquest.enums.PlayerState;
 import org.bukkit.*;

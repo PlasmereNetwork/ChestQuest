@@ -1,18 +1,18 @@
-package net.plasmere.chestquest;
+package net.plasmere.chestquest.handlers;
 
 import net.plasmere.chestquest.enums.GameState;
-import net.plasmere.chestquest.objects.ChestPlayer;
+import net.plasmere.chestquest.chest.ChestPlayer;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Game {
+public class GameHandler {
 
     private List<ChestPlayer> players;
     private GameState state;
 
-    public Game() {
+    public GameHandler() {
         players = new ArrayList<>();
     }
 
