@@ -1,5 +1,6 @@
 package net.plasmere.chestquest;
 
+import net.plasmere.chestquest.handlers.GameHandler;
 import net.plasmere.chestquest.utils.ConfigUtils;
 import net.plasmere.chestquest.utils.SQLUtils;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -12,6 +13,8 @@ public class ChestQuest extends JavaPlugin {
     private static ChestQuest instance;
 
     private ConfigHandler configHandler;
+    private GameHandler gameHandler;
+
     private Statement statement;
 
     public ConfigHandler getConf() {
@@ -42,6 +45,8 @@ public class ChestQuest extends JavaPlugin {
         instance = this;
 
         this.configHandler = new ConfigHandler();
+        this.gameHandler = new GameHandler();
+
         SQLUtils.initialize(ConfigUtils.sqlHost, ConfigUtils.sqlPort, ConfigUtils.sqlDatabase, ConfigUtils.sqlUsername, ConfigUtils.sqlPassword);
     }
 
@@ -54,4 +59,7 @@ public class ChestQuest extends JavaPlugin {
         return instance;
     }
 
+    public GameHandler getGameHandler() {
+        return gameHandler;
+    }
 }

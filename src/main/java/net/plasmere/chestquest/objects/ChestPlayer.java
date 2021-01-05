@@ -1,6 +1,7 @@
-package net.plasmere.chestquest.chest;
+package net.plasmere.chestquest.objects;
 
 import net.plasmere.chestquest.enums.PlayerState;
+import net.plasmere.chestquest.utils.PluginUtils;
 import org.bukkit.*;
 import org.bukkit.advancement.Advancement;
 import org.bukkit.advancement.AdvancementProgress;
@@ -37,7 +38,6 @@ import java.util.*;
 public class ChestPlayer implements Player {
 
     private final Player player;
-    private PlayerState state;
     public int gold;
 
     public ChestPlayer(Player player) {
@@ -45,11 +45,11 @@ public class ChestPlayer implements Player {
     }
 
     public PlayerState getState() {
-        return state;
+        return PluginUtils.getPlugin().getGameHandler().getPlayerState(player);
     }
 
     public void setState(PlayerState state) {
-        this.state = state;
+        PluginUtils.getPlugin().getGameHandler().setPlayerState(player, state);
     }
 
     @Override
