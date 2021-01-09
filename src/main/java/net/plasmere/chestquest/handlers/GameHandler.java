@@ -3,11 +3,10 @@ package net.plasmere.chestquest.handlers;
 import net.plasmere.chestquest.enums.GameState;
 import net.plasmere.chestquest.objects.ChestPlayer;
 import net.plasmere.chestquest.enums.PlayerState;
-import net.plasmere.chestquest.objects.GameCountdown;
+import net.plasmere.chestquest.objects.StartCountdown;
 import net.plasmere.chestquest.utils.PluginUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
 import java.util.HashMap;
@@ -26,7 +25,7 @@ public class GameHandler {
 
     public void beginCountdown() {
         setState(GameState.STARTING);  // Begin game start
-        countdownTask = Bukkit.getScheduler().runTaskTimer(PluginUtils.getPlugin(), new GameCountdown(), 0, 20);
+        countdownTask = Bukkit.getScheduler().runTaskTimer(PluginUtils.getPlugin(), new StartCountdown(20), 0, 20);
     }
 
     public void startGame() {

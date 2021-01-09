@@ -10,4 +10,8 @@ public class MessageConfUtils {
     }
 
     public static String version = mess.getString("version");
+    public static String countdown = mess.getString("countdown");
+    public static String start = mess.getString("start");
+    public static String join = mess.getString("join");
+    public static String leave = mess.getString("leave");
 }
